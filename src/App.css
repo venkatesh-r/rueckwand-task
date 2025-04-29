@@ -18,6 +18,7 @@
 .app-container {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .material-wrapper {
@@ -36,13 +37,21 @@
   box-shadow: 5px 5px 15px -1px #cccccc;
 }
 
+.form-wrapper h2 {
+  margin-top: 0;
+}
+
+.form-wrapper {
+  border: solid 1px #ccc;
+}
+
 .form-wrapper input {
   border-radius: 8px;
   border: solid 1px #86868b;
   background: none;
-  height: 20px;
-  margin-right: 10px;
+  margin: 0 20px 20px 10px;
   padding: 8px 10px;
+  width: 22%;
 }
 
 .form-wrapper input:hover,
@@ -58,13 +67,15 @@
 }
 
 .banner-wrapper {
-  width: 55%;
+  width: 100%;
+  display: flex;
 }
 
 .image-container {
-  width: 100%;
+  width: 98%;
   height: 300px;
   display: flex;
+  margin-right: 20px;
 }
 
 .image-container img {

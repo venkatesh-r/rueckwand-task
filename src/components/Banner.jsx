@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useMouse } from "@uidotdev/usehooks";
-import image from "../assets/image-1.jpg";
+import SideBar from "./SideBar";
 
-const Banner = () => {
+const Banner = ({ selected }) => {
   const [mouse, ref] = useMouse();
   const [xPosition, setXPosition] = useState(0);
   const [yPosition, setYPosition] = useState(0);
   const [manualMode, setManualMode] = useState(false);
-
   // Restrict updates to inside only
   useEffect(() => {
     const isInside =
@@ -22,10 +21,10 @@ const Banner = () => {
     }
   }, [mouse, manualMode]);
 
-  /*   const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setManualMode(true); // switch to manual mode
-  };*/
+  };
 
   const resetToMouse = () => {
     setManualMode(false); // go back to tracking
@@ -57,7 +56,7 @@ const Banner = () => {
           }}
           onMouseEnter={resetToMouse}
         >
-          <img src={image} />
+          <img src={selected.img} alt={selected.text} />
           {circleVisible && (
             <div
               style={{
@@ -73,6 +72,27 @@ const Banner = () => {
             />
           )}
         </article>
+      </div>
+
+      <div className="form-wrapper">
+        <h2>Distance for Circle</h2>
+        <form onSubmit={handleSubmit}>
+          <label>X:</label>
+          <input
+            type="number"
+            value={xPosition}
+            onChange={(e) => setXPosition(Number(e.target.value))}
+          />
+          <label>Y:</label>
+          <input
+            type="number"
+            value={yPosition}
+            onChange={(e) => setYPosition(Number(e.target.value))}
+          />
+          <button type="submit" className="submit-btn">
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );
