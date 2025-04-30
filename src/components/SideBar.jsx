@@ -1,5 +1,4 @@
 import React from "react";
-import CircleInput from "./CircleInput";
 
 const SideBar = ({ material, updatematerial }) => {
   return (

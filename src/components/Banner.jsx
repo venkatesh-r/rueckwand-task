@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useMouse } from "@uidotdev/usehooks";
-import SideBar from "./SideBar";
 
 const Banner = ({ selected }) => {
   const [mouse, ref] = useMouse();
   const [xPosition, setXPosition] = useState(0);
   const [yPosition, setYPosition] = useState(0);
   const [manualMode, setManualMode] = useState(false);
+  const [fadeIn, setFadeIn] = useState(false);
   // Restrict updates to inside only
   useEffect(() => {
     const isInside =
@@ -20,6 +20,13 @@ const Banner = ({ selected }) => {
       setYPosition(mouse.elementY);
     }
   }, [mouse, manualMode]);
+
+  // Fade-in effect on material change
+  useEffect(() => {
+    setFadeIn(false);
+    const timeout = setTimeout(() => setFadeIn(true), 1000);
+    return () => clearTimeout(timeout);
+  }, [selected]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,12 +58,19 @@ const Banner = ({ selected }) => {
             width: "100%",
             height: "300px",
             marginBottom: "20px",
-            border: "solid 1px #000",
             display: "flex",
           }}
           onMouseEnter={resetToMouse}
         >
-          <img src={selected.img} alt={selected.text} />
+          <div className="banner">
+            <img
+              src={selected.img}
+              alt={selected.text}
+              className={fadeIn ? "fade-in" : ""}
+              key={selected.id} // forces re-render on image change
+            />
+          </div>
+
           {circleVisible && (
             <div
               style={{
