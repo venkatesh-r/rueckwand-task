@@ -2,13 +2,15 @@ import React from "react";
 
 const SideBar = ({ material, updatematerial }) => {
   return (
-    <div
-      style={{ border: "solid 1px #ccc", width: "27.8%", marginLeft: "auto" }}
-    >
+    <div className="material-container">
       <div className="material-wrapper">
         <h2>Material Selection</h2>
-        {material.map((val) => (
-          <span onClick={() => updatematerial(val.id)} key={val.id}>
+        {material?.map((val) => (
+          <span
+            data-testid={`material-${val.id}`}
+            onClick={() => updatematerial(val.id)}
+            key={val.id}
+          >
             {val.text}
           </span>
         ))}

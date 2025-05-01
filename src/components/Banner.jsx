@@ -12,7 +12,7 @@ const Banner = ({ selected }) => {
     const isInside =
       mouse.elementX >= 0 &&
       mouse.elementY >= 0 &&
-      mouse.elementX <= 770 &&
+      mouse.elementX <= 1000 &&
       mouse.elementY <= 300;
 
     if (isInside && !manualMode) {
@@ -24,7 +24,7 @@ const Banner = ({ selected }) => {
   // Fade-in effect on material change
   useEffect(() => {
     setFadeIn(false);
-    const timeout = setTimeout(() => setFadeIn(true), 1000);
+    const timeout = setTimeout(() => setFadeIn(true), 800);
     return () => clearTimeout(timeout);
   }, [selected]);
 
@@ -41,12 +41,12 @@ const Banner = ({ selected }) => {
     (manualMode &&
       xPosition >= 0 &&
       yPosition >= 0 &&
-      xPosition <= 770 &&
+      xPosition <= 1000 &&
       yPosition <= 300) ||
     (!manualMode &&
       mouse.elementX >= 0 &&
       mouse.elementY >= 0 &&
-      mouse.elementX <= 770 &&
+      mouse.elementX <= 1000 &&
       mouse.elementY <= 300);
   return (
     <div className="banner-wrapper">
