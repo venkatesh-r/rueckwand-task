@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./styles/app.scss";
 import Banner from "./components/Banner";
 import SideBar from "./components/SideBar";
-import data from "./material";
+import data from "./data/material";
 
 function App() {
   const [material, setMaterial] = useState(data);

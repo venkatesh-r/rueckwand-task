@@ -16,11 +16,31 @@ $box-shadow-color: #cccccc;
   font-family: "SF Pro Text";
 }
 
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: $white;
+}
+
 @font-face {
   font-family: "SF Pro Text";
   font-style: normal;
   font-weight: 400;
   src: url("https://raw.githubusercontent.com/blaisck/sfwin/master/SFPro/TrueType/SFProText-Regular.ttf");
+}
+
+button {
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  &:hover {
+    border-color: #646cff;
+  }
 }
 
 .app-container {
