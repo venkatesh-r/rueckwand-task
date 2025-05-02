@@ -64,10 +64,10 @@ const Banner = ({ selected }) => {
         >
           <div className="banner">
             <img
-              src={selected.img}
-              alt={selected.text}
+              src={selected?.img}
+              alt={selected?.text}
               className={fadeIn ? "fade-in" : ""}
-              key={selected.id} // forces re-render on image change
+              key={selected?.id} // forces re-render on image change
             />
           </div>
 
@@ -91,14 +91,16 @@ const Banner = ({ selected }) => {
       <div className="form-wrapper">
         <h2>Distance for Circle</h2>
         <form onSubmit={handleSubmit}>
-          <label>X:</label>
+          <label htmlFor="x">X:</label>
           <input
+            id="x"
             type="number"
             value={xPosition}
             onChange={(e) => setXPosition(Number(e.target.value))}
           />
-          <label>Y:</label>
+          <label htmlFor="y">Y:</label>
           <input
+            id="y"
             type="number"
             value={yPosition}
             onChange={(e) => setYPosition(Number(e.target.value))}

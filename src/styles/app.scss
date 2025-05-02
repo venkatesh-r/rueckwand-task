@@ -1,3 +1,11 @@
+$black: #000;
+$white: #ffffff;
+$sidebar-bg: #f5f5f7;
+$button-color: #0076df;
+$button-hover-color: #006edb;
+$input-border-color: #86868b;
+$box-shadow-color: #cccccc;
+
 #root {
   max-width: 1600px;
   /*   margin: 0 auto;
@@ -32,74 +40,69 @@
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  background-color: #f5f5f7;
+  background-color: $sidebar-bg;
   padding-bottom: 20px;
   box-shadow: 0 10px 10px rgb(0 0 0 / 0.2);
 }
 
-.material-wrapper span {
-  background-color: #0076df;
-  color: #ffffff;
-  width: 40%;
-  margin-bottom: 15px;
-  padding: 10px;
-  -webkit-box-shadow: 5px 5px 15px -1px #cccccc;
-  box-shadow: 5px 5px 15px -1px #cccccc;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
-.material-wrapper span:hover {
-  background-color: #006edb;
-}
-
-.form-wrapper h2 {
-  margin-top: 0;
-  padding-top: 20px;
+.material-wrapper {
+  span {
+    background-color: $button-color;
+    color: $white;
+    width: 40%;
+    margin-bottom: 15px;
+    padding: 10px;
+    -webkit-box-shadow: 5px 5px 15px -1px $box-shadow-color;
+    box-shadow: 5px 5px 15px -1px $box-shadow-color;
+    border-radius: 25px;
+    cursor: pointer;
+    &:hover {
+      background-color: $button-hover-color;
+    }
+  }
 }
 
 .form-wrapper {
   border-radius: 12px;
-  background-color: #f5f5f7;
+  background-color: $sidebar-bg;
   margin-bottom: 20px;
   height: 300px;
   box-shadow: 0 10px 10px rgb(0 0 0 / 0.2);
-}
-
-.form-wrapper form {
-  display: inline-block;
-  margin: 20px 0;
-}
-
-.form-wrapper input {
-  border-radius: 8px;
-  border: solid 1px #86868b;
-  background: none;
-  margin: 0 20px 20px 10px;
-  padding: 8px 10px;
-  width: 22%;
-}
-
-.form-wrapper input:hover,
-.form-wrapper input:focus,
-.form-wrapper input:focus-visible {
-  box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.16) !important;
-  border: solid 1px #86868b;
+  h2 {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+  form {
+    display: inline-block;
+    margin: 20px 0;
+  }
+  input {
+    border-radius: 8px;
+    border: solid 1px $input-border-color;
+    background: none;
+    margin: 0 20px 20px 10px;
+    padding: 8px 10px;
+    width: 22%;
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      box-shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.16) !important;
+      border: solid 1px $input-border-color;
+    }
+  }
 }
 
 .submit-btn {
   border-radius: 50px;
-  background-color: #0076df;
-  color: #ffffff;
+  background-color: $button-color;
+  color: $white;
   margin-top: 15px;
-}
-
-.submit-btn:hover {
-  background-color: #006edb;
-}
-
-.submit-btn:focus {
-  outline: none;
+  &:hover {
+    background-color: $button-hover-color;
+  }
+  &:focus {
+    outline: none;
+  }
 }
 
 .banner-wrapper {
@@ -111,6 +114,9 @@
   width: 97%;
   height: 300px;
   margin-right: 20px;
+  img {
+    width: 100%;
+  }
 }
 
 .banner {
@@ -130,10 +136,6 @@
 .banner img.fade-in {
   opacity: 1;
   transform: scale(1);
-}
-
-.image-container img {
-  width: 100%;
 }
 
 /* Keyframes Animation */

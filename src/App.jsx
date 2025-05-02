@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import "./styles/app.scss";
 import Banner from "./components/Banner";
 import SideBar from "./components/SideBar";
 import data from "./material";
