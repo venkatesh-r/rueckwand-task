@@ -64,7 +64,7 @@ const Banner = ({ selected }) => {
         >
           <div className="banner">
             <img
-              src={selected?.img}
+              src={`/rueckwand-task/assets/${selected?.img}`}
               alt={selected?.text}
               className={fadeIn ? "fade-in" : ""}
               key={selected?.id} // forces re-render on image change
