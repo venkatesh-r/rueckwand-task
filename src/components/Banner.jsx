@@ -12,7 +12,7 @@ const Banner = ({ selected }) => {
     const isInside =
       mouse.elementX >= 0 &&
       mouse.elementY >= 0 &&
-      mouse.elementX <= 1000 &&
+      mouse.elementX <= 1020 &&
       mouse.elementY <= 300;
 
     if (isInside && !manualMode) {
@@ -41,12 +41,12 @@ const Banner = ({ selected }) => {
     (manualMode &&
       xPosition >= 0 &&
       yPosition >= 0 &&
-      xPosition <= 1000 &&
+      xPosition <= 1020 &&
       yPosition <= 300) ||
     (!manualMode &&
       mouse.elementX >= 0 &&
       mouse.elementY >= 0 &&
-      mouse.elementX <= 1000 &&
+      mouse.elementX <= 1020 &&
       mouse.elementY <= 300);
   return (
     <div className="banner-wrapper">
